@@ -8,5 +8,5 @@ DB_connect_status()
 const port = process.env.PORT || 3000
 
 const server = app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`iNotebook listening on port ${port}`)
 })
