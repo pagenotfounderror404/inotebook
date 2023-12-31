@@ -2,6 +2,7 @@ import { User } from '../models/User.model.js'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
+//SIGN UP
 export const createuser = async (req, res) => {
   try {
     let user = await User.findOne({ email: req.body.email })
@@ -30,25 +31,7 @@ export const createuser = async (req, res) => {
   }
 }
 
-export const getallUser = async (req, res) => {
-  try {
-    const doc = await User.find()
-
-    res.status(200).json({
-      status: 'success',
-      results: doc.length,
-      data: {
-        data: doc,
-      },
-    })
-  } catch (err) {
-    res.status(500).json({
-      status: 'error',
-      message: err.message,
-    })
-  }
-}
-
+//LOGIN
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body
@@ -79,6 +62,7 @@ export const login = async (req, res) => {
   }
 }
 
+//USER DETAILS
 export const getuser = async (req, res) => {
   try {
     const userid = req.id
