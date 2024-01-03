@@ -37,6 +37,7 @@ export const login = async (req, res) => {
     const { email, password } = req.body
     let user = await User.findOne({ email })
     if (!user) {
+      console.log(req.body)
       res.status(404).json({
         status: 'fail',
         error: 'Incorrect Email-id or Password',

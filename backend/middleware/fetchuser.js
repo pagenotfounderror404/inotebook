@@ -3,7 +3,7 @@ export const fetchuser = (req, res, next) => {
   const token = req.header('auth-token')
   if (!token) {
     res.status(401).json({
-      error: 'Please login',
+      error: 'Please Login',
     })
   }
   try {
@@ -11,9 +11,8 @@ export const fetchuser = (req, res, next) => {
     req.id = data.id
   } catch (error) {
     res.status(401).json({
-      error: 'Please login',
+      error: error.message,
     })
   }
-
   next()
 }

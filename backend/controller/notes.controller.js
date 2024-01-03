@@ -63,7 +63,7 @@ export const updatenote = async (req, res) => {
         runValidators: true,
       }
     )
-    res.status(404).send(note)
+    res.status(201).json({ note })
   } catch (err) {
     res.status(500).json({
       status: 'error',

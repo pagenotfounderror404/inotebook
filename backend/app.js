@@ -1,7 +1,10 @@
 import express from 'express'
 import notesRouter from './routes/notes.route.js'
 import authRouter from './routes/auth.route.js'
+import cors from 'cors'
 export const app = express()
+
+app.use(cors())
 
 app.use(express.json())
 
